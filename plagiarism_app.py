@@ -4,9 +4,6 @@ import numpy as np
 import tensorflow as tf
 import re
 import nltk
-import spacy
-from spacy.cli import download
-import os
 import contractions
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -16,12 +13,6 @@ nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    download("en_core_web_sm")
-    nlp = spacy.load("en_core_web_sm")
-
 stop_words = set(stopwords.words('english'))
 lemmatizer = WordNetLemmatizer()
 
@@ -30,7 +21,7 @@ tokenizer = pickle.load(open('tokenizer.pkl', 'rb'))
 
 def preprocess(text):
     text = text.lower()  # Lowercase text
-    text = contractions.fix(text)  # Expand contractions 
+    text = contractions.fix(text)  # Expand contractions
     text = re.sub(r'[^a-zA-Z\s]', '', text)  # Remove punctuation, digits, special chars
     text = re.sub(r'\s+', ' ', text).strip()  # Remove extra whitespace
     words = word_tokenize(text)  # Tokenize
