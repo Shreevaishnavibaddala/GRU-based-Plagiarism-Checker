@@ -5,6 +5,7 @@ import tensorflow as tf
 import re
 import nltk
 import spacy
+from spacy.cli import download
 import os
 import contractions
 from nltk.corpus import stopwords
