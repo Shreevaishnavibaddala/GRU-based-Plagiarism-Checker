@@ -15,8 +15,11 @@ nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
-nlp = spacy.load('en_core_web_sm')
-
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
 
 stop_words = set(stopwords.words('english'))
 lemmatizer = WordNetLemmatizer()
