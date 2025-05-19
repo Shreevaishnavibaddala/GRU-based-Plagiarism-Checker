@@ -4,4 +4,3 @@ numpy>=1.21.0
 nltk
 contractions
 pickle-mixin
-nltk-downloader punkt stopwords wordnet
