@@ -22,8 +22,8 @@ def vectorize(text):
 
 st.title("Plagiarism Checker")
 
-source_text = st.text_area("Enter Source Text")
-plagiarism_text = st.text_area("Enter Text to Check for Plagiarism")
+source_text = st.text_area("Enter Source Text (Click CTRL+Enter after entering text)")
+plagiarism_text = st.text_area("Enter Text to Check for Plagiarism (Click CTRL+Enter after entering text)")
 
 if st.button("Check"):
 
