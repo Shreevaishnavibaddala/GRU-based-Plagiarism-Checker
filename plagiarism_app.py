@@ -5,7 +5,7 @@ import tensorflow as tf
 import re
 import time
 
-model = tf.keras.models.load_model('best_gru_model.keras')
+model = tf.keras.models.load_model("best_gru_model.keras", compile=False)
 tokenizer = pickle.load(open('tokenizer.pkl', 'rb'))
 
 def preprocess(text):
